@@ -129,7 +129,7 @@ def search_books():
     for book in books.values():
         # AttributeError: 'Book' object has no attribute '__title'. Did you mean: 'get_title'?
         if search_word in book.get_title() or search_word in book.get_author():
-            print(book.info())
+            print(f"책 제목: [{book.get_title()}], 저자: [{book.get_author()}], ISBN: [{book.get_isbn()}], 책 유형: [{book.get_book_type()}], 대여 여부:[{book.get_rented()}]")
         else:
             print("등록되지 않는 도서입니다.")
             Validation.log_error("검색 오류: 미등록 도서 검색")
